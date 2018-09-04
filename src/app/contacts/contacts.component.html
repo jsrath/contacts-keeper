@@ -1,0 +1,21 @@
+<h1 (click)="resetContacts($event)" class="text-center">Contacts</h1>
+<p id="letters-container" class="text-capitalize text-center">
+  <a class="letters" (click)="filterContacts($event)" href="#" *ngFor="let letter of letters">
+    {{letter}}
+  </a>
+</p>
+<div class="container m-auto">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div *ngFor="let contact of this.dataService.contacts[0]">
+      <div class="col-md-4 mt-4" *ngIf="contact.name.toLowerCase().slice(0,1).includes(clickedLetter.toLowerCase().slice(0,1))">
+        <a class="card rounded-0 text-dark text-center" style="width: 18em;" [routerLink]="['/profile', contact.id]" routerLinkActive="router-link-active">
+          <ul class="list-group">
+            <li class="card-header list-unstyled rounded-0 text-white">{{ contact.name }}</li>
+            <li class="list-group-item border-0 p-1">{{ contact.email }}</li>
+            <li class="list-group-item border-0 p-1">{{ contact.phone }}</li>
+          </ul>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

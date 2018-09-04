@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  min-height: 500px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 1em;
+  padding-bottom: 0.2em;
+  background: linear-gradient( to left, transparent 33%, #00897b 33%, #00897b 66%, transparent 66%) bottom no-repeat;
+  background-size: 4em 3px;
+}
+
+.red {
+  color: #00897b;
+}
+
+input[type="text"] {
+  width: 250px;
+}
+
+#delete-button {
+  border: 1px solid #00897b;
+  background-color: #fff;
+  color: #00897b;
+}
+
+#button-container {
+  margin-top: 40px;
+}

@@ -1,0 +1,21 @@
+.container {
+  padding: 0 110px;
+  margin: 30px auto;
+}
+
+.logo-image {
+  width: 200px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  app-search {
+    display: none;
+  }
+
+}

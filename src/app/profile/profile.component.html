@@ -1,0 +1,43 @@
+<div class="container d-flex justify-content-center">
+  <div *ngFor="let contact of this.dataService.contacts[0]">
+    <div *ngIf="contact.id == id">
+      <h1 [ngClass]="{'d-block': disabled == true, 'd-none': disabled == false}">{{contact.name}}'s Profile</h1>
+      <h1 [ngClass]="{'d-block': disabled == false, 'd-none': disabled == true}">Edit {{contact.name}}'s Profile</h1>
+      <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)" class="d-flex justify-content-center flex-column align-items-center">
+
+        <div class="form-group form-inline d-none">
+          <label>Id</label>
+          <input type="text" class="form-control" value="{{id}}" [(ngModel)]="contact.id" name="id" #contactId="ngModel" minlength="1">
+        </div>
+
+        <div class="form-group form-inline">
+          <label for="contact-name">Name: </label>
+          <input [ngClass]="{'border-0': disabled == true, 'border': disabled == false}" class="form-control bg-white ml-2" type="text"
+            [(ngModel)]="contact.name" name="name" #contactName="ngModel" [disabled]="disabled" id="contact-name" value="{{contact.name}}">
+        </div>
+        <div class="form-group form-inline">
+          <label for="contact-email">Email: </label>
+          <input [ngClass]="{'border-0': disabled == true, 'border': disabled == false, 'red': disabled == true, 'text-dark': disabled == false}"
+            class="form-control bg-white ml-2" type="text" [(ngModel)]="contact.email" name="email" #contactEmail="ngModel"
+            [disabled]="disabled" id="contact-email" value="{{contact.email}}">
+        </div>
+        <div class="form-group form-inline">
+          <label for="contact-phone">Phone: </label>
+          <input [ngClass]="{'border-0': disabled == true, 'border': disabled == false, 'red': disabled == true, 'text-dark': disabled == false}"
+            class="form-control bg-white ml-2" type="text" [(ngModel)]="contact.phone" name="phone" #contactPhone="ngModel"
+            minlength="8" [disabled]="disabled" id="contact-phone" value="{{contact.phone}}">
+        </div>
+        <input [ngClass]="{'d-none': disabled == true, 'd-inherit': disabled == false}" type="submit" class="btn btn-outline-dark mt-4 rounded-0"
+          style="width: 8em" value="Save Contact">
+      </form>
+      <div id="button-container" class="text-center">
+        <button id="delete-button" (click)="deleteContact(id)" [ngClass]="{'d-inherit': disabled == true, 'd-none': disabled == false}"
+          class="btn rounded-0 m-3" style="width: 5em">Delete</button>
+
+        <button (click)="editProfile()" [ngClass]="{'d-inherit': disabled == true, 'd-none': disabled == false}" class="btn btn-outline-dark rounded-0"
+          style="width: 5em">Edit</button>
+      </div>
+
+    </div>
+  </div>
+</div>

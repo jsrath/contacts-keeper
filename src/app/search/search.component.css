@@ -1,0 +1,22 @@
+:host {
+  z-index: 10;
+  height: 30px;
+}
+
+#inner-container {
+  right: 0;
+}
+
+#dropdown {
+  cursor: pointer;
+}
+
+#dropdown:hover {
+  color: #00897b;
+}
+
+#search-box {
+  width: 375px;
+  padding: 3px 10px;
+  font-size: 14px;
+}

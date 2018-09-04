@@ -1,0 +1,40 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+:host {
+  display: block;
+  margin: 40px 0 80px;
+  min-height: 500px;
+}
+
+.letters {
+  font-size: 24px;
+  letter-spacing: 0.5em;
+  font-weight: 700;
+  color: #444444;
+}
+
+.letters:hover {
+  color: #00897b;
+}
+
+#letters-container {
+  margin: 30px 0 20px;
+}
+
+h1 {
+  cursor: pointer;
+  font-size: 32px;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 1em;
+  padding-bottom: 0.2em;
+  background: linear-gradient( to left, transparent 33%, #00897b 33%, #00897b 66%, transparent 66%) bottom no-repeat;
+  background-size: 4em 3px;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+}
