@@ -15,28 +15,16 @@ export class ContactsComponent implements OnInit, OnChanges {
 
   // Creates a sorted array of unique first letters from the data provided by the data service
   sortLetters() {
-    this.dataService.contacts[0].forEach(element => {
-      this.letters.push(element.name.toUpperCase().slice(0, 1));
+    this.dataService.contacts[0].forEach(contact => {
+      this.letters.push(contact.name.toUpperCase().slice(0, 1));
     });
 
-    this.letters = this.letters.filter(function (elem, index, self) {
-      return index === self.indexOf(elem);
-    });
+    this.letters = this.letters.filter( (elem, index, self) => index === self.indexOf(elem));
   }
 
   // Sorts all contacts alphabetically by name for display
   sortContacts() {
-    this.dataService.contacts[0] = this.dataService.contacts[0].sort((a, b) => {
-      const nameOne = a.name.toLowerCase();
-      const nameTwo = b.name.toLowerCase();
-      if (nameOne < nameTwo) {
-        return -1;
-      }
-      if (nameOne > nameTwo) {
-        return 1;
-      }
-      return 0;
-    });
+    this.dataService.contacts[0] = this.dataService.contacts[0].sort((a, b) => a.name.localeCompare(b.name))
   }
 
   // Redisplays all contacts after filtering and removes red color from the clicked first letter
