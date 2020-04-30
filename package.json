@@ -24,7 +24,7 @@
     "adm-zip": "^0.4.11",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "npm-font-open-sans": "^1.1.0",
     "rxjs": "^6.3.1",
     "tether": "^1.4.4",
